@@ -1,0 +1,16 @@
+{
+  "addition": [
+    {
+      "question": "9 + 5",
+      "answer": "14"
+    },
+    {
+      "question": "15 + 14",
+      "answer": "29"
+    },
+    {
+      "question": "13 + 21",
+      "answer": "34"
+    }
+  ]
+}
