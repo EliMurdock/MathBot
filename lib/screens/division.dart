@@ -12,8 +12,9 @@ class Division extends StatefulWidget {
 }
 
 class _DivisionState extends State<Division> {
-  List<Flashcard> _flashcards = [
-    Flashcard("Press Next to learn, Flip Card to see answers", "Answers Appear here"),
+  final List<Flashcard> _flashcards = [
+    Flashcard(
+        "Press Next to learn, Flip Card to see answers", "Answers Appear here"),
     Flashcard("46 / 2", "23"),
     Flashcard("15 / 3", "5"),
     Flashcard("34 / 17", "2"),
@@ -29,8 +30,8 @@ class _DivisionState extends State<Division> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                width: 250,
-                height: 250,
+              width: 250,
+              height: 250,
               child: FlipCard(
                 front: FlashCardView(text: _flashcards[_currentIndex].question),
                 back: FlashCardView(text: _flashcards[_currentIndex].answer),
@@ -57,13 +58,15 @@ class _DivisionState extends State<Division> {
 
   void nextCard() {
     setState(() {
-      _currentIndex = (_currentIndex + 1 < _flashcards.length) ? _currentIndex + 1 : 0;
+      _currentIndex =
+          (_currentIndex + 1 < _flashcards.length) ? _currentIndex + 1 : 0;
     });
   }
 
   void previousCard() {
     setState(() {
-      _currentIndex = (_currentIndex - 1 >= 0) ? _currentIndex - 1 : _flashcards.length - 1;
+      _currentIndex =
+          (_currentIndex - 1 >= 0) ? _currentIndex - 1 : _flashcards.length - 1;
     });
   }
 }
