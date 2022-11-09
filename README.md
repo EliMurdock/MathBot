@@ -1,6 +1,3 @@
 # MathBot
-A mobile app used for helping learning math.
+A web app developed for elementary/secondary school students to help with learning math through flash cards!
 
-This is Nwokolo making sure I have a working side branch
-
-This is my branch - Joseph
