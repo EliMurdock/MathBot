@@ -3,23 +3,8 @@ import 'package:mathbot/screens/division.dart';
 import 'package:mathbot/screens/addition.dart';
 import 'package:mathbot/screens/multiplication.dart';
 import 'package:mathbot/screens/subtraction.dart';
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Math Bot',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MathBotHomePage(),
-    );
-  }
-}
+import 'package:mathbot/FlashCardPage.dart';
+import 'package:mathbot/Questions.dart';
 
 class MathBotHomePage extends StatefulWidget {
   const MathBotHomePage({Key? key}) : super(key: key);
@@ -57,10 +42,13 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                             child: OutlinedButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Addition()));
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FlashCardPage(
+                                        title: "Addition",
+                                        flashCards: Questions.addition),
+                                  ),
+                                );
                               },
                               child: const Text(
                                 "Addition",
@@ -83,10 +71,13 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                             child: OutlinedButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Subtraction()));
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FlashCardPage(
+                                        title: "Subtraction",
+                                        flashCards: Questions.subtraction),
+                                  ),
+                                );
                               },
                               child: const Text(
                                 "Subtraction",
@@ -115,17 +106,20 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                             child: OutlinedButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Multiplication()));
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FlashCardPage(
+                                        title: "Multiplication",
+                                        flashCards: Questions.multiplication),
+                                  ),
+                                );
                               },
                               child: const Text(
                                 "Multiplication",
                                 style: TextStyle(fontSize: 54.0),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),
@@ -141,10 +135,13 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                             child: OutlinedButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Division()));
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FlashCardPage(
+                                        title: "Division",
+                                        flashCards: Questions.division),
+                                  ),
+                                );
                               },
                               child: const Text(
                                 "Division",

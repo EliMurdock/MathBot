@@ -7,10 +7,14 @@ class FlashCardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      child: Center(
-        child: Text(text, textAlign: TextAlign.center),
+    return SizedBox(
+      height: 400,
+      width: 750,
+      child: Card(
+        elevation: 8,
+        child: Center(
+          child: Text(text, textAlign: TextAlign.center),
+        ),
       ),
     );
   }
