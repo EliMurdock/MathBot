@@ -38,22 +38,22 @@ Newest version 2.18.x as of 10/9/2022
 
 
 # Helpful Links
-### Android Studio
+## Android Studio
 https://developer.android.com/studio/?gclid=CjwKCAiAvK2bBhB8EiwAZUbP1JSdzYYPJQooPjxXdS1eZxinQHhHo7L23dRJGhbzwkqGjOBHg4Zj1hoCvaEQAvD_BwE&gclsrc=aw.ds
 #### Windows 10 tutorial
 https://www.youtube.com/watch?v=wlpFwwCU_mc
 #### Windows 11 tutorial
 https://www.youtube.com/watch?v=2TDqOhFpuqs
-### Flutter
+## Flutter
 #### What is Flutter?
 https://www.youtube.com/watch?v=I9ceqw5Ny-4
 #### Part 1 Flutter Tutorial
 https://www.youtube.com/watch?v=1ukSR1GRtMU&list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ&index=2
-### Dart
+## Dart
 #### Dart in 100 Seconds
 https://www.youtube.com/watch?v=NrO0CJCbYLA
 
-### Google Realtime Database
+## Google Realtime Database
 #### Add Firebase to your Flutter App
 https://firebase.google.com/docs/flutter/setup?platform=ios
 #### How To Connect Firebase In Flutter
