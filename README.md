@@ -1,5 +1,5 @@
 # MathBot
-##A web app developed for elementary/secondary school students to help with learning math through flash cards!
+## A web app developed for elementary/secondary school students to help with learning math through flash cards!
 #### Developed using Flutter framework with Dart programming language in Android Studio.
 
 # Development Tools
