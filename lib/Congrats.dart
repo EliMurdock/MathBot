@@ -23,7 +23,7 @@ class _CongratsPageState extends State<CongratsPage> {
             children: const [
               Text(
                 "CONGRATULATIONS!",
-                style: TextStyle(color: Colors.red, fontSize: 250),
+                style: TextStyle(color: Colors.red, fontSize: 100),
               )
             ],
           ),
