@@ -17,6 +17,7 @@ class FlashCardPage extends StatefulWidget {
 }
 
 class _FlashCardPageState extends State<FlashCardPage> {
+  GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
   int _currentIndex = 0;
 
   @override
@@ -39,12 +40,24 @@ class _FlashCardPageState extends State<FlashCardPage> {
               width: 700,
               height: 450,
               child: FlipCard(
-                front: FlashCardView(
-                    text: widget.flashCards[_currentIndex].question),
-                back: FlashCardView(
-                    text: widget.flashCards[_currentIndex].answer),
-              ),
+                key: cardKey,
+                speed: 200,
+                front: Container(
+                  color: Colors.blue,
+                  alignment: Alignment.center,
+                  child: FlashCardView(
+                      text: widget.flashCards[_currentIndex].question)),
+
+                back: Container(
+                  color: Colors.green,
+                  alignment: Alignment.center,
+                  child: FlashCardView(
+                      text: widget.flashCards[_currentIndex].answer)))),
+
+            SizedBox(
+              height: 30,
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -74,8 +87,13 @@ class _FlashCardPageState extends State<FlashCardPage> {
   }
 
   void nextCard() {
-    setState(
-      () {
+    setState(() {
+      if (cardKey.currentContext != null) {
+        if (!cardKey.currentState!.isFront) {
+          cardKey.currentState!.toggleCard();
+        }
+      }
+
         if (_currentIndex != widget.flashCards.length - 1) {
           _currentIndex = (_currentIndex + 1 < widget.flashCards.length)
               ? _currentIndex + 1
@@ -94,8 +112,13 @@ class _FlashCardPageState extends State<FlashCardPage> {
   }
 
   void previousCard() {
-    setState(
-      () {
+    setState(() {
+      if (cardKey.currentContext != null) {
+        if (!cardKey.currentState!.isFront) {
+          cardKey.currentState!.toggleCard();
+        }
+      }
+
         _currentIndex = (_currentIndex - 1 >= 0)
             ? _currentIndex - 1
             : widget.flashCards.length - 1;
