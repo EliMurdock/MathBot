@@ -3,6 +3,7 @@ import 'package:flip_card/flip_card.dart';
 import 'package:mathbot/flashcard_view.dart';
 import 'package:mathbot/flashcard.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:mathbot/Congrats.dart';
 
 class FlashCardPage extends StatefulWidget {
   const FlashCardPage({Key? key, required this.title, required this.flashCards})
@@ -75,9 +76,19 @@ class _FlashCardPageState extends State<FlashCardPage> {
   void nextCard() {
     setState(
       () {
-        _currentIndex = (_currentIndex + 1 < widget.flashCards.length)
-            ? _currentIndex + 1
-            : 0;
+        if (_currentIndex != widget.flashCards.length - 1) {
+          _currentIndex = (_currentIndex + 1 < widget.flashCards.length)
+              ? _currentIndex + 1
+              : 0;
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CongratsPage(
+              )
+            ),
+          );
+        }
       },
     );
   }
