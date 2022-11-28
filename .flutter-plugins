@@ -1,6 +1,6 @@
 # This is a generated file; do not edit or check into version control.
-cloud_firestore_web=/Users/josephkaku/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-3.0.5/
-firebase_core=/Users/josephkaku/.pub-cache/hosted/pub.dartlang.org/firebase_core-2.2.0/
-firebase_core_web=/Users/josephkaku/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-2.0.1/
-firebase_database=/Users/josephkaku/.pub-cache/hosted/pub.dartlang.org/firebase_database-10.0.5/
-firebase_database_web=/Users/josephkaku/.pub-cache/hosted/pub.dartlang.org/firebase_database_web-0.2.1+15/
+cloud_firestore_web=/Users/nwokolo24/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-3.1.0/
+firebase_core=/Users/nwokolo24/.pub-cache/hosted/pub.dartlang.org/firebase_core-2.3.0/
+firebase_core_web=/Users/nwokolo24/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-2.0.1/
+firebase_database=/Users/nwokolo24/.pub-cache/hosted/pub.dartlang.org/firebase_database-10.0.6/
+firebase_database_web=/Users/nwokolo24/.pub-cache/hosted/pub.dartlang.org/firebase_database_web-0.2.1+16/

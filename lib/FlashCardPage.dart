@@ -10,7 +10,7 @@ class FlashCardPage extends StatefulWidget {
       : super(key: key);
 
   final String title;
-  final List<Flashcard> flashCards;
+  final List flashCards;
 
   @override
   State<FlashCardPage> createState() => _FlashCardPageState();
@@ -46,15 +46,15 @@ class _FlashCardPageState extends State<FlashCardPage> {
                   color: Colors.blue,
                   alignment: Alignment.center,
                   child: FlashCardView(
-                      text: widget.flashCards[_currentIndex].question)),
+                      text: widget.flashCards[_currentIndex]['question'])),
 
                 back: Container(
                   color: Colors.green,
                   alignment: Alignment.center,
                   child: FlashCardView(
-                      text: widget.flashCards[_currentIndex].answer)))),
+                      text: widget.flashCards[_currentIndex]['answer'])))),
 
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
 

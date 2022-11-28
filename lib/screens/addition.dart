@@ -15,24 +15,30 @@ class Addition extends StatefulWidget {
 
 class _AdditionState extends State<Addition> {
   List _items = [];
-
-  List<Flashcard> _flashcards = [
-    Flashcard(
-        "Press Next to learn, Flip Card to see answers", "Answers Appear here"),
-    Flashcard("9 + 5", "14"),
-    Flashcard("15 + 14", "29"),
-    Flashcard("13 + 21", "34"),
-  ];
-
   int _currentIndex = 0;
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/addition.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["addition"];
+    });
+  }
 
   @override
   void initState() {
+    readJson();
     super.initState();
-    // Database reference goes here
   }
 
-  int counter = 0;
+  // List<Flashcard> _flashcards = [
+  //   Flashcard(
+  //       "Press Next to learn, Flip Card to see answers", "Answers Appear here"),
+  //   Flashcard("9 + 5", "14"),
+  //   Flashcard("15 + 14", "29"),
+  //   Flashcard("13 + 21", "34"),
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +52,8 @@ class _AdditionState extends State<Addition> {
               width: 700,
               height: 450,
               child: FlipCard(
-                front: FlashCardView(text: _flashcards[_currentIndex].question),
-                back: FlashCardView(text: _flashcards[_currentIndex].answer),
+                front: FlashCardView(text: _items[_currentIndex]['question']),
+                back: FlashCardView(text: _items[_currentIndex]['answer']),
               ),
             ),
             Row(
@@ -80,7 +86,7 @@ class _AdditionState extends State<Addition> {
     setState(() {
       readJson();
       _currentIndex =
-          (_currentIndex + 1 < _flashcards.length) ? _currentIndex + 1 : 0;
+          (_currentIndex + 1 < _items.length) ? _currentIndex + 1 : 0;
     });
   }
 
@@ -88,17 +94,7 @@ class _AdditionState extends State<Addition> {
     setState(() {
       readJson();
       _currentIndex =
-          (_currentIndex - 1 >= 0) ? _currentIndex - 1 : _flashcards.length - 1;
-    });
-  }
-
-  Future<void> readJson() async {
-    final String response =
-        await rootBundle.loadString('assets/addition_data.json');
-    final data = await json.decode(response);
-
-    setState(() {
-      _items = data['addition'];
+          (_currentIndex - 1 >= 0) ? _currentIndex - 1 : _items.length - 1;
     });
   }
 }

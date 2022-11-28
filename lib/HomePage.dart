@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mathbot/screens/division.dart';
 import 'package:mathbot/screens/addition.dart';
 import 'package:mathbot/screens/multiplication.dart';
@@ -14,6 +17,22 @@ class MathBotHomePage extends StatefulWidget {
 }
 
 class _MathBotHomePageState extends State<MathBotHomePage> {
+  List _addition = [];
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/addition.json');
+    final data = await json.decode(response);
+    setState(() {
+      _addition = data["addition"];
+    });
+  }
+
+  @override
+  void initState() {
+    readJson();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +65,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Addition",
-                                        flashCards: Questions.addition),
+                                        flashCards: _addition),
                                   ),
                                 );
                               },
@@ -75,7 +94,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Subtraction",
-                                        flashCards: Questions.subtraction),
+                                        flashCards: _addition),
                                   ),
                                 );
                               },
@@ -110,7 +129,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Multiplication",
-                                        flashCards: Questions.multiplication),
+                                        flashCards: _addition),
                                   ),
                                 );
                               },
@@ -139,7 +158,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Division",
-                                        flashCards: Questions.division),
+                                        flashCards: _addition),
                                   ),
                                 );
                               },
