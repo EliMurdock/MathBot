@@ -2,12 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:mathbot/screens/division.dart';
-import 'package:mathbot/screens/addition.dart';
-import 'package:mathbot/screens/multiplication.dart';
-import 'package:mathbot/screens/subtraction.dart';
 import 'package:mathbot/FlashCardPage.dart';
-import 'package:mathbot/Questions.dart';
 
 class MathBotHomePage extends StatefulWidget {
   const MathBotHomePage({Key? key}) : super(key: key);
@@ -18,9 +13,12 @@ class MathBotHomePage extends StatefulWidget {
 
 class _MathBotHomePageState extends State<MathBotHomePage> {
   List _addition = [];
+  List _subtraction = [];
+  List _division = [];
+  List _multiplication = [];
 
   // Fetch content from the json file
-  Future<void> readJson() async {
+  Future<void> readAddition() async {
     final String response = await rootBundle.loadString('assets/addition.json');
     final data = await json.decode(response);
     setState(() {
@@ -28,11 +26,42 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
     });
   }
 
+  // Fetch content from the json file
+  Future<void> readSubtraction() async {
+    final String response = await rootBundle.loadString('assets/addition.json');
+    final data = await json.decode(response);
+    setState(() {
+      _subtraction = data["addition"];
+    });
+  }
+
+  // Fetch content from the json file
+  Future<void> readDivision() async {
+    final String response = await rootBundle.loadString('assets/addition.json');
+    final data = await json.decode(response);
+    setState(() {
+      _division = data["addition"];
+    });
+  }
+
+  // Fetch content from the json file
+  Future<void> readMultiplication() async {
+    final String response = await rootBundle.loadString('assets/addition.json');
+    final data = await json.decode(response);
+    setState(() {
+      _multiplication = data["addition"];
+    });
+  }
+
   @override
   void initState() {
-    readJson();
+    readAddition();
+    readSubtraction();
+    readDivision();
+    readMultiplication();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +123,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Subtraction",
-                                        flashCards: _addition),
+                                        flashCards: _subtraction),
                                   ),
                                 );
                               },
@@ -129,7 +158,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Multiplication",
-                                        flashCards: _addition),
+                                        flashCards: _multiplication),
                                   ),
                                 );
                               },
@@ -158,7 +187,7 @@ class _MathBotHomePageState extends State<MathBotHomePage> {
                                   MaterialPageRoute(
                                     builder: (context) => FlashCardPage(
                                         title: "Division",
-                                        flashCards: _addition),
+                                        flashCards: _division),
                                   ),
                                 );
                               },
