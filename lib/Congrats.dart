@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mathbot/HomePage.dart';
+import 'package:mathbot/home_page.dart';
 
 class CongratsPage extends StatefulWidget {
   const CongratsPage({Key? key}) : super(key: key);

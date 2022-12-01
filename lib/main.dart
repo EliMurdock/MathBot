@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:mathbot/home_page.dart';
+
 import 'package:mathbot/welcome.dart';
+
+import 'home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,11 +16,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      darkTheme: ThemeData(brightness: Brightness.dark),
-      title: "MathBot",
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const WelcomePage(),
+      title: 'Math Bot',
+      theme: ThemeData(
+        textTheme: Theme.of(context).textTheme.apply(
+          bodyColor: Colors.black,
+          displayColor: Colors.black,
+        )
+      ),
+      home: const HomeScreen(),
     );
   }
 }
