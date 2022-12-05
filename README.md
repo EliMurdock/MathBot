@@ -61,3 +61,17 @@ https://techsolutionshere.com/how-to-connect-firebase-in-flutter/#:~:text=How%20
 
 # Rights
 I don't know, I should probably write something about rights and copyright but I have no idea what it should be. I don't think we care.
+
+## John Stennett
+https://github.com/johnstennett24
+
+
+## Joseph Kaku
+https://github.com/Joseph-kaku
+
+
+## Bueze Nwokolo
+https://github.com/nwokolo24
+
+
+
