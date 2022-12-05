@@ -66,6 +66,10 @@ I don't know, I should probably write something about rights and copyright but I
 https://github.com/johnstennett24
 
 
+## Michael Downs
+https://github.com/mdowns1999
+
+
 ## Joseph Kaku
 https://github.com/Joseph-kaku
 
@@ -73,5 +77,8 @@ https://github.com/Joseph-kaku
 ## Bueze Nwokolo
 https://github.com/nwokolo24
 
+
+## Tyler Shaw
+https://github.com/tyshaw12
 
 
