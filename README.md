@@ -14,7 +14,7 @@ Firebase Realtime noSQL database Current Version
 Newest version 2.18.x as of 10/9/2022
 
 # Project Aim
-#### Something about the goal of the project here
+#### Teach children the art of mathematics through flashcards.
 
 
 
